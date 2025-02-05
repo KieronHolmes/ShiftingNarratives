@@ -41,8 +41,8 @@ This repository houses the code and assets from a paper that presents findings f
 
 ### Cloning Repository
 ```
-git clone https://github.com/KieronHolmes/shifting-narratives.git
-cd shifting-narratives
+git clone https://github.com/KieronHolmes/ShiftingNarratives.git
+cd ShiftingNarratives
 ```
 
 ### Configure Conda Environment
