@@ -75,6 +75,14 @@ Execute the `main.py` file in the repository, using the `input` flag for the CSV
 python main.py --input=content.csv --outputdir=./output
 ```
 
+## Input
+
+Data used within this application should have (at minimum), the following columns: tweet_text, tweet_time, tweet_language & is_retweet.
+
+Within this paper, we have utilised the 2018_IRA dataset produced by the [Twitter Moderation Research Consortium](https://web.archive.org/web/20240219201436/https://transparency.twitter.com/en/reports/moderation-research.html). Any of the `*_tweets.csv` datasets should work with this application; however, tuning of hyperparameters may be required for datasets with low volumes of Tweets and a likely low number of coherent topic clusters.
+
+_**n.b.** The link provided above to the Twitter Moderation Research Consortium is a link via the Internet Archive service. Since the Twitter to X rebrand, moderation and transparency policies have changed, meaning this webpage is no longer publicly available._
+
 ## Output
 
 - `./{output_directory}/csv` - Outputs `topic-info-all.csv` and `document-info-all.csv`
