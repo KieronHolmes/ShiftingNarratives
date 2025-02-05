@@ -112,19 +112,14 @@ def generate_ngrams(tokens, n):
 dtypes_tweet = {
     "tweet_text": str,
     "tweet_time": str,
-    # "tweet_language": str,
-    # "is_retweet": bool,
+    "tweet_language": str,
+    "is_retweet": bool,
 }
 
 # Load dataframes and set fields to be imported as dates
 df = pd.read_csv(
     args.input,
-    usecols=[
-        "tweet_text",
-        "tweet_time",
-        # "tweet_language",
-        # "is_retweet"
-    ],
+    usecols=["tweet_text", "tweet_time", "tweet_language", "is_retweet"],
     dtype=dtypes_tweet,
     low_memory=True,
 )
@@ -136,20 +131,21 @@ print("{} Records loaded into Dataframe `df`".format(df.shape[0]))
 print("Before:")
 print(df.info())
 
-df = df[:50000]
+# Limit for dev
+# df = df[:50000]
 
 #################
 # Preprocessing #
 #################
 
 # Drop non-English tweets
-# df.drop(df[df.tweet_language != "en"].index, inplace=True)
+df.drop(df[df.tweet_language != "en"].index, inplace=True)
 
 # Drop Retweets
-# df.drop(df[df.is_retweet == True].index, inplace=True)
+df.drop(df[df.is_retweet == True].index, inplace=True)
 
 # Apply Preprocessing
-# df["tweet_text"] = df["tweet_text"].apply(lambda x: clean_tweets(x))
+df["tweet_text"] = df["tweet_text"].apply(lambda x: clean_tweets(x))
 
 # Remove Empty Tweets
 df["tweet_text"].replace("", np.nan, inplace=True)
