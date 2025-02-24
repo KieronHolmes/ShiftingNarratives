@@ -1,10 +1,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/KieronHolmes/ShiftingNarratives">
-    <img src="https://placehold.co/80x80/EEE/31343C" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Shifting Narratives</h3>
 
   <p align="center">
